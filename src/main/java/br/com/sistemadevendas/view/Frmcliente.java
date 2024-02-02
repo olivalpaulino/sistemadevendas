@@ -9,7 +9,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Núcleo
+ * @author Olival Paulino
  */
 public class Frmcliente extends javax.swing.JFrame {
 
@@ -67,10 +67,11 @@ public class Frmcliente extends javax.swing.JFrame {
         jFormattedTextFieldDadosPessoaisRG = new javax.swing.JFormattedTextField();
         jLabelDadosPessoaisCPF = new javax.swing.JLabel();
         jFormattedTextFieldDadosPessoaisCPF = new javax.swing.JFormattedTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
+        jButtonAbasNovo = new javax.swing.JButton();
+        jButtonAbasSalvar = new javax.swing.JButton();
+        jButtonAbasEditar = new javax.swing.JButton();
+        jButtonAbasExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -327,11 +328,15 @@ public class Frmcliente extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jFormattedTextFieldDadosPessoaisCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAbaDadosPessoaisLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(182, 182, 182))
         );
         jPanelAbaDadosPessoaisLayout.setVerticalGroup(
             jPanelAbaDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAbaDadosPessoaisLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(13, 13, 13)
                 .addGroup(jPanelAbaDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDadosPessoaisCodigo)
                     .addComponent(jTextFieldDadosPessoaisCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -377,30 +382,32 @@ public class Frmcliente extends javax.swing.JFrame {
                     .addGroup(jPanelAbaDadosPessoaisLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jFormattedTextFieldDadosPessoaisCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73))
         );
 
         jTabbedPaneAbas.addTab("Dados pessoais", jPanelAbaDadosPessoais);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Novo");
+        jButtonAbasNovo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonAbasNovo.setText("Novo");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("Salvar");
+        jButtonAbasSalvar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonAbasSalvar.setText("Salvar");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setText("Editar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAbasEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonAbasEditar.setText("Editar");
+        jButtonAbasEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonAbasEditarActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setText("Excluir");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAbasExcluir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonAbasExcluir.setText("Excluir");
+        jButtonAbasExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButtonAbasExcluirActionPerformed(evt);
             }
         });
 
@@ -415,17 +422,17 @@ public class Frmcliente extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(349, 349, 349)
-                .addComponent(jButton2)
+                .addComponent(jButtonAbasNovo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(jButtonAbasSalvar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(jButtonAbasEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(jButtonAbasExcluir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton2, jButton3, jButton4, jButton5});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonAbasEditar, jButtonAbasExcluir, jButtonAbasNovo, jButtonAbasSalvar});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,14 +442,14 @@ public class Frmcliente extends javax.swing.JFrame {
                 .addComponent(jTabbedPaneAbas)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(jButtonAbasNovo)
+                    .addComponent(jButtonAbasSalvar)
+                    .addComponent(jButtonAbasEditar)
+                    .addComponent(jButtonAbasExcluir))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton2, jButton3, jButton4, jButton5});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonAbasEditar, jButtonAbasExcluir, jButtonAbasNovo, jButtonAbasSalvar});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -451,13 +458,13 @@ public class Frmcliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonConsultaDeClientesPesquisarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonAbasEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbasEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonAbasEditarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButtonAbasExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbasExcluirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jButtonAbasExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -495,10 +502,11 @@ public class Frmcliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButtonAbasEditar;
+    private javax.swing.JButton jButtonAbasExcluir;
+    private javax.swing.JButton jButtonAbasNovo;
+    private javax.swing.JButton jButtonAbasSalvar;
     private javax.swing.JButton jButtonConsultaDeClientesPesquisar;
     private javax.swing.JComboBox<String> jComboBoxDadosPessoaisUF;
     private javax.swing.JFormattedTextField jFormattedTextFieldDadosPessoaisCPF;
