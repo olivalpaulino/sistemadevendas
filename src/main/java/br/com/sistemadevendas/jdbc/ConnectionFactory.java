@@ -20,8 +20,8 @@ public class ConnectionFactory {
         try {
             // Dados da conexao com o banco de dados MySQL
             String url = "jdbc:mysql://localhost:3306/bdvendas";
-            String usuario = "usuariocurso";
-            String senha = "123";
+            String usuario = "root";
+            String senha = "root";
             // Carregar o Driver JDBC do MySQL
             Class.forName("com.mysql.cj.jdbc.Driver");
             
@@ -30,6 +30,7 @@ public class ConnectionFactory {
             
             System.out.println("Conexão Realizada com Sucesso!");
         } catch(SQLException e) {
+            // Apresenta a mensagem de erro
             System.out.println("Erro ao conectar com o banco de dados");
             System.err.println(e);
         }
