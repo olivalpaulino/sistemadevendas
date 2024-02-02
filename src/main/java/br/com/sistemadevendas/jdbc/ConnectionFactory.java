@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
     
-    public static Connection getConnection() throws ClassNotFoundException {
+    public Connection getConnection() throws ClassNotFoundException {
         Connection conexao = null;
         try {
             // Dados da conexao com o banco de dados MySQL
