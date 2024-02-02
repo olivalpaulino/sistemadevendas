@@ -14,13 +14,14 @@ import javax.swing.JOptionPane;
  */
 public class TestaConexao {
     // Testando a conexao com o BD
-    /*
+    
     public static void main(String[] args) {
         try {
             Connection conexao = new ConnectionFactory().getConnection();
             JOptionPane.showMessageDialog(null, "Conectado com Sucesso!");
+            ConnectionFactory.fecharConexao(conexao);
         } catch(Exception erro) {
             JOptionPane.showMessageDialog(null, "Erro ao conectar: "+erro);
         }
-    }*/
+    }
 }

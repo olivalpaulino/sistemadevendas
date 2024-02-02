@@ -37,4 +37,15 @@ public class ConnectionFactory {
         
         return conexao;
     }
+    
+    public static void fecharConexao(Connection conexao) {
+        if (conexao != null) {
+            try {
+                conexao.close();
+                System.out.println("Conexão Fechada com Sucesso!");
+            } catch(SQLException e) {
+                System.out.println("Erro ao fechar a conexao: "+e);
+            }
+        }
+    }
 }
