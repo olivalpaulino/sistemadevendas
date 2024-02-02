@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
  * @author Olival Paulino
  */
 public class TestaConexao {
+    // Testando a conexao com o BD
+    /*
     public static void main(String[] args) {
         try {
             Connection conexao = new ConnectionFactory().getConnection();
@@ -20,5 +22,5 @@ public class TestaConexao {
         } catch(Exception erro) {
             JOptionPane.showMessageDialog(null, "Erro ao conectar: "+erro);
         }
-    }
+    }*/
 }
