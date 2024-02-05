@@ -5,6 +5,9 @@
  */
 package br.com.sistemadevendas.view;
 
+import br.com.sistemadevendas.dao.ClientesDAO;
+import br.com.sistemadevendas.model.Clientes;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -32,12 +35,6 @@ public class Frmcliente extends javax.swing.JFrame {
         jPanelBanner = new javax.swing.JPanel();
         jLabelBanner = new javax.swing.JLabel();
         jTabbedPaneAbas = new javax.swing.JTabbedPane();
-        jPanelAbaConsultaDeClienes = new javax.swing.JPanel();
-        jLabelConsultaDeClientesNome = new javax.swing.JLabel();
-        jTextFieldConsultaDeClientesNome = new javax.swing.JTextField();
-        jButtonConsultaDeClientesPesquisar = new javax.swing.JButton();
-        jScrollPaneConsultaDeClientesTabelaDeDados = new javax.swing.JScrollPane();
-        jTableConsultaDeClientesTabelaDeDados = new javax.swing.JTable();
         jPanelAbaDadosPessoais = new javax.swing.JPanel();
         jLabelDadosPessoaisCodigo = new javax.swing.JLabel();
         jTextFieldDadosPessoaisCodigo = new javax.swing.JTextField();
@@ -68,6 +65,12 @@ public class Frmcliente extends javax.swing.JFrame {
         jLabelDadosPessoaisCPF = new javax.swing.JLabel();
         jFormattedTextFieldDadosPessoaisCPF = new javax.swing.JFormattedTextField();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
+        jPanelAbaConsultaDeClienes = new javax.swing.JPanel();
+        jLabelConsultaDeClientesNome = new javax.swing.JLabel();
+        jTextFieldConsultaDeClientesNome = new javax.swing.JTextField();
+        jButtonConsultaDeClientesPesquisar = new javax.swing.JButton();
+        jScrollPaneConsultaDeClientesTabelaDeDados = new javax.swing.JScrollPane();
+        jTableConsultaDeClientesTabelaDeDados = new javax.swing.JTable();
         jButtonAbasNovo = new javax.swing.JButton();
         jButtonAbasSalvar = new javax.swing.JButton();
         jButtonAbasEditar = new javax.swing.JButton();
@@ -97,63 +100,6 @@ public class Frmcliente extends javax.swing.JFrame {
                 .addComponent(jLabelBanner)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
-
-        jPanelAbaConsultaDeClienes.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabelConsultaDeClientesNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelConsultaDeClientesNome.setText("Nome:");
-
-        jTextFieldConsultaDeClientesNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jButtonConsultaDeClientesPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonConsultaDeClientesPesquisar.setText("Pesquisar");
-        jButtonConsultaDeClientesPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConsultaDeClientesPesquisarActionPerformed(evt);
-            }
-        });
-
-        jTableConsultaDeClientesTabelaDeDados.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Nome:", "Cpf:", "RG:", "E-mail:", "Telefone:", "Celular:", "Cep:", "Endereço:", "Nº:", "Bairro:", "Complemento:", "Bairro:", "Cidade:", "UF:"
-            }
-        ));
-        jScrollPaneConsultaDeClientesTabelaDeDados.setViewportView(jTableConsultaDeClientesTabelaDeDados);
-
-        javax.swing.GroupLayout jPanelAbaConsultaDeClienesLayout = new javax.swing.GroupLayout(jPanelAbaConsultaDeClienes);
-        jPanelAbaConsultaDeClienes.setLayout(jPanelAbaConsultaDeClienesLayout);
-        jPanelAbaConsultaDeClienesLayout.setHorizontalGroup(
-            jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAbaConsultaDeClienesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPaneConsultaDeClientesTabelaDeDados, javax.swing.GroupLayout.DEFAULT_SIZE, 991, Short.MAX_VALUE)
-                    .addGroup(jPanelAbaConsultaDeClienesLayout.createSequentialGroup()
-                        .addComponent(jLabelConsultaDeClientesNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldConsultaDeClientesNome, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonConsultaDeClientesPesquisar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanelAbaConsultaDeClienesLayout.setVerticalGroup(
-            jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAbaConsultaDeClienesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelConsultaDeClientesNome)
-                    .addComponent(jTextFieldConsultaDeClientesNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonConsultaDeClientesPesquisar))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPaneConsultaDeClientesTabelaDeDados, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
-        jTabbedPaneAbas.addTab("Consulta de clientes", jPanelAbaConsultaDeClienes);
 
         jPanelAbaDadosPessoais.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -231,7 +177,12 @@ public class Frmcliente extends javax.swing.JFrame {
         jLabelDadosPessoaisUF.setText("UF:");
 
         jComboBoxDadosPessoaisUF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBoxDadosPessoaisUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxDadosPessoaisUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AL", "PE", "SE", "BH", "RN" }));
+        jComboBoxDadosPessoaisUF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDadosPessoaisUFActionPerformed(evt);
+            }
+        });
 
         jLabelDadosPessoaisRG.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelDadosPessoaisRG.setText("RG:");
@@ -373,7 +324,6 @@ public class Frmcliente extends javax.swing.JFrame {
                 .addGroup(jPanelAbaDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDadosPessoaisUF)
                     .addComponent(jComboBoxDadosPessoaisUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanelAbaDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelAbaDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelDadosPessoaisRG)
@@ -389,11 +339,73 @@ public class Frmcliente extends javax.swing.JFrame {
 
         jTabbedPaneAbas.addTab("Dados pessoais", jPanelAbaDadosPessoais);
 
+        jPanelAbaConsultaDeClienes.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabelConsultaDeClientesNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelConsultaDeClientesNome.setText("Nome:");
+
+        jTextFieldConsultaDeClientesNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jButtonConsultaDeClientesPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonConsultaDeClientesPesquisar.setText("Pesquisar");
+        jButtonConsultaDeClientesPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultaDeClientesPesquisarActionPerformed(evt);
+            }
+        });
+
+        jTableConsultaDeClientesTabelaDeDados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Nome:", "Cpf:", "RG:", "E-mail:", "Telefone:", "Celular:", "Cep:", "Endereço:", "Nº:", "Bairro:", "Complemento:", "Bairro:", "Cidade:", "UF:"
+            }
+        ));
+        jScrollPaneConsultaDeClientesTabelaDeDados.setViewportView(jTableConsultaDeClientesTabelaDeDados);
+
+        javax.swing.GroupLayout jPanelAbaConsultaDeClienesLayout = new javax.swing.GroupLayout(jPanelAbaConsultaDeClienes);
+        jPanelAbaConsultaDeClienes.setLayout(jPanelAbaConsultaDeClienesLayout);
+        jPanelAbaConsultaDeClienesLayout.setHorizontalGroup(
+            jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAbaConsultaDeClienesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneConsultaDeClientesTabelaDeDados, javax.swing.GroupLayout.DEFAULT_SIZE, 991, Short.MAX_VALUE)
+                    .addGroup(jPanelAbaConsultaDeClienesLayout.createSequentialGroup()
+                        .addComponent(jLabelConsultaDeClientesNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldConsultaDeClientesNome, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonConsultaDeClientesPesquisar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelAbaConsultaDeClienesLayout.setVerticalGroup(
+            jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAbaConsultaDeClienesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelAbaConsultaDeClienesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelConsultaDeClientesNome)
+                    .addComponent(jTextFieldConsultaDeClientesNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonConsultaDeClientesPesquisar))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneConsultaDeClientesTabelaDeDados, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jTabbedPaneAbas.addTab("Consulta de clientes", jPanelAbaConsultaDeClienes);
+
         jButtonAbasNovo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonAbasNovo.setText("Novo");
 
         jButtonAbasSalvar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonAbasSalvar.setText("Salvar");
+        jButtonAbasSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAbasSalvarActionPerformed(evt);
+            }
+        });
 
         jButtonAbasEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonAbasEditar.setText("Editar");
@@ -465,6 +477,39 @@ public class Frmcliente extends javax.swing.JFrame {
     private void jButtonAbasExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbasExcluirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAbasExcluirActionPerformed
+
+    private void jButtonAbasSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbasSalvarActionPerformed
+        // Cadastra os dados do formulario no banco de dados
+        try {
+            Clientes obj = new Clientes();
+            obj.setNome(jTextFieldDadosPessoaisNome.getText());
+            obj.setRg(jFormattedTextFieldDadosPessoaisRG.getText());
+            obj.setCpf(jFormattedTextFieldDadosPessoaisCPF.getText());
+            obj.setEmail(jTextFieldDadosPessoaisEmail.getText());
+            obj.setTelefone(jFormattedTextFieldDadosPessoaisTelefoneFixo.getText());
+            obj.setCelular(jFormattedTextFieldDadosPessoaisCelular.getText());
+            obj.setCep(jFormattedTextFieldDadosPessoaisCep.getText());
+            obj.setEndereco(jTextFieldDadosPessoaisEndereco.getText());
+            obj.setNumero(Integer.parseInt(jTextFieldDadosPessoaisNumero.getText()));
+            obj.setComplemento(jTextFieldDadosPessoaisComplemento.getText());
+            obj.setBairro(jTextFieldDadosPessoaisBairro.getText());
+            obj.setCidade(jTextFieldDadosPessoaisCidade.getText());
+            obj.setUf(jComboBoxDadosPessoaisUF.getSelectedItem().toString());
+            
+            // criar obj da camada dao para cadastrar o objeto criado a partir dos dados do formulario
+            ClientesDAO dao = new ClientesDAO();
+            dao.cadastrarCliente(obj); // cadastra o objeto
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro ao Cadastrar o Objeto!");
+        }
+        
+    }//GEN-LAST:event_jButtonAbasSalvarActionPerformed
+
+    private void jComboBoxDadosPessoaisUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDadosPessoaisUFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxDadosPessoaisUFActionPerformed
 
     /**
      * @param args the command line arguments
